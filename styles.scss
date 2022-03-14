@@ -1,0 +1,429 @@
+@import "colors";
+
+@mixin headPadding($padding: true) {
+    @if $padding { 
+        padding: 1.6rem;
+        transition: all 250ms linear 0s;
+    } @else {
+        padding: 1rem;
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62.5%;
+  }
+
+html,
+body {
+  height: 100vh;
+  font-family: 'Sora', sans-serif;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+
+    nav ul {
+        display: flex;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: $secondary-color;
+                font-size: 1.4rem;
+                @include headPadding($padding: true);
+            }
+
+            a:hover {
+                color: darken($secondary-color, 40%);
+            }
+
+            .invisible {
+                display: none;
+            }
+            
+            .image {
+                @include headPadding($padding: false);
+                
+                .transparent {
+                    width: 20px;
+                    opacity: 0.6;
+                    transition: all 250ms linear 0s;
+                }
+                
+                .transparent:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+section#banner {
+    margin: 50px 0;
+
+    .container {
+        width: 90%;
+        max-width: 980px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+
+        div {
+            width: 60%;
+
+            h2 {
+                color: $secondary-color;
+                font-weight: 700;
+                font-size: 3.2rem;
+                line-height: 4rem;
+            }
+
+            h3 {
+                color: $primary-color;
+                font-weight: 700;
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+            }
+            
+            p {
+                color: $tertiary-color;
+                font-size: 1.8rem;
+                line-height: 3.2rem;
+                margin: 10px 0px 0px;
+            }
+
+            .formula {
+                width: 100%;
+                display: flex;
+                margin-top: 50px;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                }
+
+                h1 {
+                    font-weight: 700;
+                    font-size: 3.6rem;
+                    line-height: 8.8rem;
+                    margin: 0 20px;
+                    color: $primary-color;
+                }
+            }
+        }
+    
+        #draw {
+            margin-left: 5%;
+            width: 35%;
+        }
+    }
+}
+
+main {
+    padding: 20px 0 80px 0;
+
+    h1 {
+        color: $secondary-color;
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+section#content {
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-gap: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    .container {
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        img:hover {
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+}
+
+.text {
+    margin-top: 20px;
+}
+
+.name {
+    margin-bottom: 30px;
+    color: $secondary-color;
+    font-size: 1.3rem;
+}
+
+.value {
+    color: $tertiary-color;
+
+    span {
+        color: $primary-color;
+    }
+}
+
+#form {
+    width: 100%;
+    padding: 40px 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 90%;
+        max-width: 980px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 6px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        input, p {
+            color: $secondary-color;
+            font-size: 1.6rem;
+            margin: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid $primary-color;
+        }
+
+        button {
+            background-color: $primary-color;
+            color: $quaternary-color;
+            font-size: 1.6rem;
+            border: 1px solid $primary-color;
+            border-radius: 6px;
+            padding: 5px 20px 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 250ms linear 0s;
+        }
+
+        button:hover {
+            background-color: lighten($primary-color, 10%);
+        }
+    }
+}
+
+footer {
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+
+    img {
+        width: 2.4rem;
+        opacity: 0.6;
+        cursor: pointer;
+        transition: all 250ms linear 0s;
+    }
+
+    img:hover {
+        opacity: 1;
+    }
+
+    a {
+        padding: 0 20px;
+        font-size: 1.2rem;
+        line-height: 8rem;
+        text-decoration: none;
+        color: $secondary-color;
+        transition: all 250ms linear 0s;
+    }
+
+    a:hover {
+        color: darken($secondary-color, 40%);
+    }
+
+    a:first-of-type {
+        line-height: 9.6rem;
+    }
+
+    a:last-of-type {
+        margin-left: auto;
+        color: $secondary-color !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%
+    }
+}
+
+@media (max-width: 630px) {
+    #banner .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #elements {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .formula h1 {
+        line-height: 4.8rem !important;
+    }
+
+
+    #draw {
+        order: -1;
+    }
+
+    #form form {
+        flex-direction: column;
+
+        p {
+            text-align: center;
+        }
+
+        input {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    nav {
+        display: none;
+    }
+
+    .one,
+    .two,
+    .three {
+        background-color: $secondary-color;
+        height: 5px;
+        width: 100%;
+        margin: 6px auto;
+        transition-duration: 0.3s;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+    }
+
+    .menu-section.on {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $primary-color;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-section.on nav {
+        display: block;
+    }
+
+    .menu-section.on .menu-toggle {
+        position: absolute;
+        right: 25px;
+        top: 60px;
+    }
+
+    .menu-section.on .menu-toggle .one {
+        transform: rotate(45deg) translate(7px, 7px);
+        background-color: $quaternary-color;
+    }
+
+    .menu-section.on .menu-toggle .two {
+        opacity: 0;
+    }
+
+    .menu-section.on .menu-toggle .three {
+        transform: rotate(-45deg) translate(8px, -9px);
+        background-color: $quaternary-color;
+    }
+
+    .menu-section.on nav ul {
+        text-align: center;
+        display: block;
+        animation-name: fade-in;
+        animation-duration: 500ms;
+
+        .invisible {
+            display: block;
+        }
+    }
+
+    .menu-section.on nav ul a{
+        transition-duration: 0.5s;
+        font-size: 3rem;
+        line-height: 4rem;
+        display: block;
+        color: $quaternary-color !important;
+    }
+
+    .menu-section.on nav ul li:last-of-type {
+        display: none;
+    }
+
+    .formula {
+        justify-content: center;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
