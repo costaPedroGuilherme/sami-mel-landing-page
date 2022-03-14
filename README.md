@@ -6,7 +6,7 @@
 
 
 ## 💻 Projeto
-Página inicial da Sami Mel, uma lojinha de bolos artesanais maravigold
+Página inicial da Sami Mel, uma lojinha de bolos artesanais maravigold!
 
 ## ✨ Tecnologias
 
