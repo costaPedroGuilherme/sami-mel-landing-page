@@ -61,10 +61,6 @@ header .container {
                     color: darken($secondary-color, 40%);
                 }
             }
-
-            .invisible {
-                display: none;
-            }
             
             .image {
                 @include headPadding($padding: false);
@@ -79,6 +75,10 @@ header .container {
                     }
                 }
             }
+        }
+
+        .invisible {
+            display: none;
         }
     }
 }
